@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Crypto Dashboard{% endblock %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">Crypto Dashboard</h1>
+    <p class="lead">Just a crypto dashboard</p>
+    <a class="btn btn-lg btn-primary" href="{{ url_for('auth.login') }}" role="button">Get started »</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12"> 
+        <h2>Crypto List</h2>
+        <form action="" method="post">
+            <label for="title">Ticker</label>
+            <input class="form-control form-control-lg" type="text" name="title" id="title" placeholder="What do you want to do?" required>
+            <button type="submit" class="btn btn-primary">Add</button>
+            <label for="title"><em>or press <code>Return</code> to save</em></label>
+        </form>
+    </div>
+  </div>
+  <div style="margin-bottom:100px"></div>
+{% endblock %}
