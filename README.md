@@ -56,4 +56,21 @@ from dotenv import load_dotenv
 load_dotenv()
 api = REST()
 api.get_crypto_bars("BTCUSD", TimeFrame.Minute).df
+import plotly.graph_objects as go
+fig = go.Figure(data=[
+    go.Candlestick(
+        x=df.index, 
+        open=df['open'], 
+        high=df['high'], 
+        low=df['low'], 
+        close=df['close'],
+    )
+])
+fig.show()
 ```
+
+Heroku deployment
+Add GitHub Actions
+Add Docker
+
+Add filter by the exchange CBSE, FTXU and ERSX

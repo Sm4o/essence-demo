@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Crypto Dashboard{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12"> 
+        <h2>Crypto List</h2>
+        <form method="post">
+            <label for="coin">Coin</label>
+            <select id="coin" name="coin" class="form-control">
+              <option selected>BTC</option>
+              <option>ETH</option>
+              <option>BAT</option>
+              <option>XRP</option>
+              <option>DOGE</option>
+              <option>SOL</option>
+            </select>
+            <label for="exchange">Exchange</label>
+            <select id="exchange" name="exchange" class="form-control">
+              <option selected>CBSE</option>
+              <option>FTXU</option>
+              <option>ERSX</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </form>
+    </div>
+  </div>
+  <div id='chart' class='chart'></div>
+  <table class="table table-striped">
+    <tr>
+        {% for col in column_names %}
+        <th>{{ col }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in row_data %}
+    <tr>
+        {% for row_ in row %}
+        <td>{{ row_ }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+  <div style="margin-bottom:100px"></div>
+
+{% endblock %}
