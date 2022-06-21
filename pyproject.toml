@@ -16,7 +16,35 @@ plotly = "^5.8.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+black = {version = "^22.3.0", allow-prereleases = true}
+mypy = "^0.961"
+flake8 = "^4.0.1"
+
+[tool.black]
+line-length = 79
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+

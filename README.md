@@ -59,11 +59,26 @@ For login create a [GitHub OAuth App](https://docs.github.com/en/developers/apps
 - Authorization callback URL - `http://localhost:5000/login/callback`
 
 
+## Linting
+``` bash
+poetry run flake8 .
+```
+
+## Static Typing
+``` bash
+poetry run mypy .
+```
+
+## Code Formatting
+``` bash
+poetry run black .
+```
+
 ## Future changes
-- [ ] Testable Component Design/architecture
-- [ ] Presentation and service logic layers (HTTP calls, app flow, shared data)
-- [ ] Form handling with validation
 - [ ] Table sorting and pagination. Maybe use [DataTables.js](https://blog.miguelgrinberg.com/post/beautiful-interactive-tables-for-your-flask-templates) or [Dash inside Flask](https://hackersandslackers.com/plotly-dash-with-flask/)
-- [ ] Unit and integration tests a minimum, with BDD tests using tools like Cypress would be good to see but not essential
-- [ ] Add static typing, and pre-commit hooks etc
-- [ ] List of allowed users
+- [ ] Add more [supported cryptos](https://alpaca.markets/support/what-cryptocurrencies-does-alpaca-currently-support/)
+- DevOps:
+  - [ ] Docker build
+  - [ ] GitHub Actions
+  - [ ] Heroku deploy
+  - [ ] Add pre-commit hooks to automate linting, type checking and formatting 
